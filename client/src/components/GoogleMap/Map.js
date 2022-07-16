@@ -50,8 +50,8 @@ export const options = {
     resolution: 'provinces',
     backgroundColor: { fill: 'transparent'},
     /*datalessRegionColor: '#81d4fa',*/
-    defaultColor: 'cornsilk',
-    // defaultColor: '#ffb071',
+    // defaultColor: 'cornsilk',
+    defaultColor: '#D78644',
     datalessRegionColor: 'transparent',
     stroke: 'red',
     width: "100%",
