@@ -1,4 +1,4 @@
-import { Grid, Typography } from '@mui/material'
+import { Button, Grid, Typography } from '@mui/material'
 import React from 'react'
 import Map from '../components/GoogleMap/Map'
 
@@ -10,11 +10,17 @@ const Homepage = () => {
           <Map />
         </div>
       </Grid>
-      <Grid item  xs={12} >
-        <div style={{padding:"2rem"}}>
-        <Typography variant="h3" marginTop={3} textAlign={'center'}>Aitihasik</Typography>
-        <Typography variant="h5" marginTop={3} textAlign={'justify'}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit rem tempore dolorum assumenda autem laudantium quos porro quis? Aliquid sed blanditiis repellendus.</Typography>
+      <Grid item xs={12} >
+        <div style={{ padding: "2rem" }}>
+          <Typography variant="h3" marginTop={3} textAlign={'center'}>Aitihasik</Typography>
+          <Typography variant="h5" marginTop={3} textAlign={'center'}>Click on any of the buttons given below</Typography>
+
         </div>
+      </Grid>
+      <Grid item>
+        <Button variant='contained' style={{marginRight:"1rem",marginBottom:"1rem", fontSize:"1.22rem"}}>Rulers</Button>
+        <Button variant='contained' style={{marginRight:"1rem",marginBottom:"1rem", fontSize:"1.22rem"}}>Forts</Button>
+        <Button variant='contained' style={{marginRight:"1rem",marginBottom:"1rem", fontSize:"1.22rem"}}>Quiz</Button>
       </Grid>
     </Grid>
   )
