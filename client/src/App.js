@@ -1,14 +1,17 @@
 import './App.css';
 import Navbar1 from './components/Navbar/Navbar';
-
 import Homepage from './pages/Homepage'
-
+import Quizpage from './pages/Quizpage';
+import { Routes, Route } from 'react-router-dom'
 function App() {
   return (
-    <div className="App">
-      <Navbar1/>
-      <Homepage/>
-    </div>
+    <>
+      <Navbar1 />
+      <Routes>
+        <Route path='/' element={<Homepage />} />
+        <Route path='/quiz' element={<Quizpage />} />
+      </Routes>
+    </>
   );
 }
 

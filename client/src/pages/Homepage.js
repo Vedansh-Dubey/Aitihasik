@@ -1,5 +1,6 @@
 import { Button, Grid, Typography } from '@mui/material'
 import React from 'react'
+import { Link } from 'react-router-dom'
 import Map from '../components/GoogleMap/Map'
 
 const Homepage = () => {
@@ -18,9 +19,9 @@ const Homepage = () => {
         </div>
       </Grid>
       <Grid item>
-        <Button variant='contained' style={{marginRight:"1rem",marginBottom:"1rem", fontSize:"1.22rem"}}>Rulers</Button>
-        <Button variant='contained' style={{marginRight:"1rem",marginBottom:"1rem", fontSize:"1.22rem"}}>Forts</Button>
-        <Button variant='contained' style={{marginRight:"1rem",marginBottom:"1rem", fontSize:"1.22rem"}}>Quiz</Button>
+        <Button variant='contained' style={{ marginRight: "1rem", marginBottom: "1rem", fontSize: "1.22rem" }}>Rulers</Button>
+        <Button variant='contained' style={{ marginRight: "1rem", marginBottom: "1rem", fontSize: "1.22rem" }}>Forts</Button>
+        <Link to={"/quiz"}><Button variant='contained' style={{ marginRight: "1rem", marginBottom: "1rem", fontSize: "1.22rem" }}>Quiz</Button></Link>
       </Grid>
     </Grid>
   )
