@@ -53,8 +53,9 @@ export const options = {
     // defaultColor: 'cornsilk',
     defaultColor: '#9D5011',
     datalessRegionColor: 'transparent',
-    width: "auto",
-    height: "720",
+    stroke: 'red',
+    width: "100%",
+    height: "80vh",
 };
 const Map = () => {
     return (
@@ -64,7 +65,7 @@ const Map = () => {
                 data={data}
                 options={options}
                 width="100%"
-                height="100%"
+                height="100vh"
                 legendToggle
             />
         </div>
