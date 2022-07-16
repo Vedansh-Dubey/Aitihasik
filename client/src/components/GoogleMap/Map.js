@@ -48,13 +48,14 @@ export const options = {
     colorAxis: { colors: ['#e5ef88', '#d4b114', '#e85a03'] },
     colors: ['red', 'green', 'orange', 'blue', 'yellow'],
     resolution: 'provinces',
-    backgroundColor: { fill: 'transparent', stroke: "#fff", strokeWidth: "5" },
+    backgroundColor: { fill: 'transparent'},
     /*datalessRegionColor: '#81d4fa',*/
     defaultColor: 'cornsilk',
     // defaultColor: '#ffb071',
     datalessRegionColor: 'transparent',
-    width: "auto",
-    height: "720",
+    stroke: 'red',
+    width: "100%",
+    height: "80vh",
 };
 const Map = () => {
     return (
@@ -64,7 +65,7 @@ const Map = () => {
                 data={data}
                 options={options}
                 width="100%"
-                height="100%"
+                height="100vh"
                 legendToggle
             />
         </div>

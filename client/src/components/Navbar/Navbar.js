@@ -1,47 +1,24 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Typography, Container } from '@mui/material'
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 
-const Navbar = () => {
+function Navbar1() {
     return (
-        <div style={{ background: "#080c24ff" }}>
-            <Container maxWidth={'md'}>
-                <Nav>
-                    <ul>
-                        <div style={{ flex: "1" }}>
-                            <Typography variant='h6' color="white" style={{ cursor: "pointer" }}> Aitihasik</Typography>
-                        </div>
-                        <li>Home</li>
-                        <li>About us</li>
-                        <li>Contact</li>
-                    </ul>
-                </Nav>
+        <Navbar bg="dark" variant="dark" expand="lg">
+            <Container>
+                <Navbar.Brand href="#home" >Aitihasik</Navbar.Brand>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav" style={{flexGrow:"0"}}>
+                    <Nav className="me-auto">
+                        <Nav.Link href="#home">Home</Nav.Link>
+                        <Nav.Link href="#link">About Us</Nav.Link>
+                        <Nav.Link href="#link">Contact</Nav.Link>
+                    </Nav>
+                </Navbar.Collapse>
             </Container>
-        </div>
-    )
+        </Navbar>
+    );
 }
 
-
-const Nav = styled.nav`
-background-color:  #080c24ff;
-font-size: 1.1rem;
-ul{
-    min-height: 5rem;
-    font-weight: 500;
-    letter-spacing: 0.12rem;
-    display: flex;
-    list-style: none;
-    align-items: center;
-    color: white;
-    justify-content: center;
-    gap: 1rem;
-    li{
-        padding: 1rem 1.2rem;
-
-        &:hover{
-            background-color: #2B6BE9;
-        }
-    }
-}
-`
-export default Navbar
+export default Navbar1;
