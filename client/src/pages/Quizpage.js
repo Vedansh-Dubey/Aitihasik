@@ -1,90 +1,86 @@
 import { Container } from '@mui/system';
 import React, { useState } from 'react'
+import { useEffect } from 'react';
 import styled from 'styled-components'
-
+import axios from 'axios'
 const Quizpage = () => {
-    const questions = [
-        {
-            questionText: 'Chhatrapati Shivaji Maharaj (1674-1680 AD) was the ruler of which dynasty?',
-            questionImg: 'https://static.sanatanprabhat.org/wp-content/uploads/sites/7/2021/04/11210300/RS971_shivaji_maharaj_colour_Goa.jpg',
-            answerOptions: [
-                { answerText: 'Nanda', isCorrect: false },
-                { answerText: 'Haryanka', isCorrect: false },
-                { answerText: 'Maurya', isCorrect: false },
-                { answerText: 'Maratha', isCorrect: true },
-            ],
-        },
-        {
-            questionText: 'Who is CEO of Tesla?', questionImg: 'https://static.sanatanprabhat.org/wp-content/uploads/sites/7/2021/04/11210300/RS971_shivaji_maharaj_colour_Goa.jpg',
-            answerOptions: [
-                { answerText: 'Jeff Bezos', isCorrect: false },
-                { answerText: 'Elon Musk', isCorrect: true },
-                { answerText: 'Bill Gates', isCorrect: false },
-                { answerText: 'Tony Stark', isCorrect: false },
-            ],
-        },
-        {
-            questionText: 'The iPhone was created by which company?', questionImg: 'https://static.sanatanprabhat.org/wp-content/uploads/sites/7/2021/04/11210300/RS971_shivaji_maharaj_colour_Goa.jpg',
-            answerOptions: [
-                { answerText: 'Apple', isCorrect: true },
-                { answerText: 'Intel', isCorrect: false },
-                { answerText: 'Amazon', isCorrect: false },
-                { answerText: 'Microsoft', isCorrect: false },
-            ],
-        },
-        {
-            questionText: 'How many Harry Potter books are there?', questionImg: 'https://static.sanatanprabhat.org/wp-content/uploads/sites/7/2021/04/11210300/RS971_shivaji_maharaj_colour_Goa.jpg',
-            answerOptions: [
-                { answerText: '1', isCorrect: false },
-                { answerText: '4', isCorrect: false },
-                { answerText: '6', isCorrect: false },
-                { answerText: '7', isCorrect: true },
-            ],
-        },
-    ];
+  const [questions, setQuestions] = useState([
+    {
+      "questionText": "Chhatrapati Shivaji Maharaj (1674-1680 AD) was the ruler of which dynasty?",
+      "questionImg": "https://static.sanatanprabhat.org/wp-content/uploads/sites/7/2021/04/11210300/RS971_shivaji_maharaj_colour_Goa.jpg",
+      "answerOptions": [
+          {
+              "answerText": "Nanda",
+              "isCorrect": false
+          },
+          {
+              "answerText": "Haryanka",
+              "isCorrect": false
+          },
+          {
+              "answerText": "Maurya",
+              "isCorrect": false
+          },
+          {
+              "answerText": "Maratha",
+              "isCorrect": true
+          }
+      ]
+    }
+  ]);
+  const getQuiz = async () => {
+    const { data } = await axios.get(`${process.env.REACT_APP_API}/quiz`);
+    console.log(data);
+    setQuestions(data)
+  }
 
-    const [currentQuestion, setCurrentQuestion] = useState(0);
-    const [showScore, setShowScore] = useState(false);
-    const [score, setScore] = useState(0);
+  useEffect(() => {
+    getQuiz();
+  }, [])
 
-    const handleAnswerOptionClick = (isCorrect) => {
-        if (isCorrect) {
-            setScore(score + 1);
-        }
 
-        const nextQuestion = currentQuestion + 1;
-        if (nextQuestion < questions.length) {
-            setCurrentQuestion(nextQuestion);
-        } else {
-            setShowScore(true);
-        }
-    };
-    return (
-        <Container maxWidth={'lg'}>
-            <QuizWrap >
-                {showScore ? (
-                    <div className='score-section'>
-                        You scored {score} out of {questions.length}
-                    </div>
-                ) : (
-                    <>
-                        <div className='question-section'>
-                            <div className='question-count'>
-                                <span>Question {currentQuestion + 1}</span>/{questions.length}
-                            </div>
-                            <div className='question-img'><img src={questions[currentQuestion].questionImg} alt="" />{ }</div>
-                            <div className='question-text'>{questions[currentQuestion].questionText}</div>
-                        </div>
-                        <div className='answer-section'>
-                            {questions[currentQuestion].answerOptions.map((answerOption) => (
-                                <button onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}>{answerOption.answerText}</button>
-                            ))}
-                        </div>
-                    </>
-                )}
-            </QuizWrap>
-        </Container>
-    )
+  const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [showScore, setShowScore] = useState(false);
+  const [score, setScore] = useState(0);
+
+  const handleAnswerOptionClick = (isCorrect) => {
+    if (isCorrect) {
+      setScore(score + 1);
+    }
+
+    const nextQuestion = currentQuestion + 1;
+    if (nextQuestion < questions.length) {
+      setCurrentQuestion(nextQuestion);
+    } else {
+      setShowScore(true);
+    }
+  };
+  return (
+    <Container maxWidth={'lg'}>
+      <QuizWrap >
+        {showScore ? (
+          <div className='score-section'>
+            You scored {score} out of {questions.length}
+          </div>
+        ) : (
+          <>
+            <div className='question-section'>
+              <div className='question-count'>
+                <span>Question {currentQuestion + 1}</span>/{questions.length}
+              </div>
+              <div className='question-img'><img src={questions[currentQuestion].questionImg} alt="" />{ }</div>
+              <div className='question-text'>{questions[currentQuestion].questionText}</div>
+            </div>
+            <div className='answer-section'>
+              {questions[currentQuestion].answerOptions.map((answerOption,index) => (
+                <button key={index}onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}>{answerOption.answerText}</button>
+              ))}
+            </div>
+          </>
+        )}
+      </QuizWrap>
+    </Container>
+  )
 }
 
 const QuizWrap = styled.div`
