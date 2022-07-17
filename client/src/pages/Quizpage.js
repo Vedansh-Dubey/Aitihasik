@@ -5,13 +5,13 @@ import styled from 'styled-components'
 const Quizpage = () => {
     const questions = [
         {
-            questionText: 'What is the capital of France?',
+            questionText: 'Chhatrapati Shivaji Maharaj (1674-1680 AD) was the ruler of which dynasty?',
             questionImg: 'https://static.sanatanprabhat.org/wp-content/uploads/sites/7/2021/04/11210300/RS971_shivaji_maharaj_colour_Goa.jpg',
             answerOptions: [
-                { answerText: 'New York', isCorrect: false },
-                { answerText: 'London', isCorrect: false },
-                { answerText: 'Paris', isCorrect: true },
-                { answerText: 'Dublin', isCorrect: false },
+                { answerText: 'Nanda', isCorrect: false },
+                { answerText: 'Haryanka', isCorrect: false },
+                { answerText: 'Maurya', isCorrect: false },
+                { answerText: 'Maratha', isCorrect: true },
             ],
         },
         {
@@ -111,16 +111,21 @@ transform: translate(-50% ,-50%);
 }
 .question-img{
     width: 15rem;
-    height: 15rem;
+    height: 14rem;
     img{
+      border-radius: 1rem;
         width: 100%;
         height: 100%;
         object-fit: cover;
+        object-position: center;
     }
 }
 .question-section {
   width: 100%;
   position: relative;
+  display: flex;
+  flex-direction: column ;
+  align-items: center;
 }
 
 .question-count {
@@ -132,7 +137,7 @@ transform: translate(-50% ,-50%);
 }
 
 .question-text {
-  margin-bottom: 12px;
+  margin: 1.2rem 0;
 }
 
 .timer-text {
