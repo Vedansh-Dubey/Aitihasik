@@ -28,8 +28,8 @@ const loginUser = async (req, res) => {
 
 
 const registerUser = async (req, res) => {
-    const { name, password, cpassword, age, address } = req.body;
-    if (!name || !password || !age || !cpassword || !address)
+    const { name, password, cpassword, age, mobile } = req.body;
+    if (!name || !password || !age || !cpassword || !mobile)
         return res.status(400).send("Please fill all the fields");
 
     const exist = await User.findOne({ name });
@@ -45,7 +45,7 @@ const registerUser = async (req, res) => {
         age,
         password: hashpassword,
         cpassword: hashpassword,
-        address,
+        mobile,
     });
     try {
         user.save();
