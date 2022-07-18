@@ -85,15 +85,16 @@ const Quizpage = () => {
 
 const QuizWrap = styled.div`
 position: absolute;
+
 left:50%;
-top:50%;
+top:62%;
 transform: translate(-50% ,-50%);
   background-color: #252d4a;
-  width: 40%;
+  width: 100%;
   min-height: 200px;
   color: white;
   height: min-content;
-  border-radius: 15px;
+  // border-radius: 15px;
   padding: 20px;
   box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75);
   display: flex;
@@ -106,8 +107,8 @@ transform: translate(-50% ,-50%);
   align-items: center;
 }
 .question-img{
-    width: 15rem;
-    height: 14rem;
+    width: 14rem;
+    height: 15rem;
     img{
       border-radius: 1rem;
         width: 100%;
@@ -148,13 +149,15 @@ transform: translate(-50% ,-50%);
 
 /* ANSWERS/RIGHT SECTION */
 .answer-section {
-  width: 100%;
+  width: 80%;
+  align-self: center;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 button {
+  margin-top: 5px;
   width: 100%;
   font-size: 16px;
   color: #ffffff;
@@ -162,7 +165,7 @@ button {
   border-radius: 15px;
   display: flex;
   padding: 5px;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   border: 5px solid #234668;
   cursor: pointer;
@@ -177,7 +180,7 @@ button {
 }
 
 button:hover {
-  background-color: #555e7d;
+  background-color: #6579C2;
 }
 
 button:focus {

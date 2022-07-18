@@ -3,6 +3,7 @@ import Navbar1 from './components/Navbar/Navbar';
 import Homepage from './pages/Homepage'
 import Quizpage from './pages/Quizpage';
 import { Routes, Route } from 'react-router-dom'
+import { Ruler } from './pages/Ruler';
 function App() {
   return (
     <>
@@ -10,6 +11,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Homepage />} />
         <Route path='/quiz' element={<Quizpage />} />
+        <Route path='/rulers' element={<Ruler />} />
       </Routes>
     </>
   );
