@@ -6,7 +6,7 @@ export const Ruler = () => {
    <div class="container">
       <div class="card">
          <div class="card-header">
-            <img src="https://static.sanatanprabhat.org/wp-content/uploads/sites/7/2021/04/11210300/RS971_shivaji_maharaj_colour_Goa.jpg" alt="Tesla Truck"></img>
+            <img src="https://static.sanatanprabhat.org/wp-content/uploads/sites/7/2021/04/11210300/RS971_shivaji_maharaj_colour_Goa.jpg" alt="Chatrapati Shivaji Maharaj"></img>
          </div>   
    
          <div class="card-body">
@@ -18,7 +18,7 @@ export const Ruler = () => {
 
       <div class="card">
          <div class="card-header">
-            <img src="https://www.dauniv.ac.in/public/frontassets/image/Ahilyabai_holkar_320.jpg" alt=""></img>
+            <img src="https://www.dauniv.ac.in/public/frontassets/image/Ahilyabai_holkar_320.jpg" alt="Ahilyadevi Holkar"></img>
          </div>   
    
          <div class="card-body">

@@ -20,7 +20,7 @@ const Homepage = () => {
       </Grid>
       <Grid item>
         <Link to={"/rulers"}><Button variant='contained' style={{ marginRight: "1rem", marginBottom: "1rem", fontSize: "1.22rem" }}>Rulers</Button></Link>
-        <Button variant='contained' style={{ marginRight: "1rem", marginBottom: "1rem", fontSize: "1.22rem" }}>Forts</Button>
+        <Link to={"/forts"}><Button variant='contained' style={{ marginRight: "1rem", marginBottom: "1rem", fontSize: "1.22rem" }}>Forts</Button></Link>
         <Link to={"/quiz"}><Button variant='contained' style={{ marginRight: "1rem", marginBottom: "1rem", fontSize: "1.22rem" }}>Quiz</Button></Link>
       </Grid>
     </Grid>
