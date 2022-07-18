@@ -57,17 +57,17 @@ margin: 0;
 .container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    width: 940px;
-    gap: 20px;
+    gap: 10px;
     margin: auto;
   }
   
   .card {
-    background-color: #E0E6FD;
+    background-color: #CDDFF8;
     border-radius: 10px;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    width: 300px;
+    width: 100%;
+    margin-top:5px
   }
   .card-header img {
     width: 100%;
@@ -118,8 +118,8 @@ margin: 0;
   @media (max-width: 940px) {
     .container {
       grid-template-columns: 1fr;
+      width: 150%;
       justify-items: center;
-      width: 200%;
     }
   }
 `
