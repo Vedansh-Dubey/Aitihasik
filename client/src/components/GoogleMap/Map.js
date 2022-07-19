@@ -45,15 +45,15 @@ export const options = {
     region: 'IN',
     domain: 'IN',
     displayMode: 'regions',
-    colorAxis: { colors: ['#e5ef88', '#d4b114', '#e85a03'] },
+    colorAxis: { colors: ['#000000', '#d4b114', '#e85a03'] },
     colors: ['red', 'green', 'orange', 'blue', 'yellow'],
     resolution: 'provinces',
-    backgroundColor: { fill: 'grey', stroke: "#fff", strokeWidth: "5" },
+    backgroundColor: { fill: 'grey' },
     /*datalessRegionColor: '#81d4fa',*/
     // defaultColor: 'cornsilk',
     defaultColor: '#9D5011',
     datalessRegionColor: 'transparent',
-    stroke: 'red',
+    // stroke: 'red',
     width: "100%",
     height: "80vh",
 };
