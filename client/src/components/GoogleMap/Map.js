@@ -48,7 +48,7 @@ export const options = {
     colorAxis: { colors: ['#e5ef88', '#d4b114', '#e85a03'] },
     colors: ['red', 'green', 'orange', 'blue', 'yellow'],
     resolution: 'provinces',
-    backgroundColor: { fill: 'cornsilk', stroke: "#fff", strokeWidth: "5" },
+    backgroundColor: { fill: 'grey', stroke: "#fff", strokeWidth: "5" },
     /*datalessRegionColor: '#81d4fa',*/
     // defaultColor: 'cornsilk',
     defaultColor: '#9D5011',
