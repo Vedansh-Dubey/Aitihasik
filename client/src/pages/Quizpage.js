@@ -87,13 +87,13 @@ const QuizWrap = styled.div`
 position: absolute;
 
 left:50%;
-top:62%;
+top:55%;
 transform: translate(-50% ,-50%);
   background-color: #252d4a;
   width: 100%;
   min-height: 200px;
   color: white;
-  height: min-content;
+  height: 100%;
   // border-radius: 15px;
   padding: 20px;
   box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75);
@@ -102,9 +102,17 @@ transform: translate(-50% ,-50%);
   justify-content: space-evenly;
 
   .score-section {
-  display: flex;
-  font-size: 24px;
-  align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+padding-top: 10px;
+    align-self: center;
+    vertical-align: middle;
+width: 100%;
+    border-radius: 15px;
+    color: black;
+background-color: #BECEFF;
+
 }
 .question-img{
     width: 14rem;

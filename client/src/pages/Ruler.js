@@ -4,25 +4,25 @@ import styled from 'styled-components'
 export const Ruler = () => {
   return (
     <Wrapper>
-      <div class="container">
-        <div class="card">
-          <div class="card-header">
-            <img src="https://static.sanatanprabhat.org/wp-content/uploads/sites/7/2021/04/11210300/RS971_shivaji_maharaj_colour_Goa.jpg" alt="Tesla Truck"></img>
-          </div>
-
-          <div class="card-body">
+   <div class="container">
+      <div class="card">
+         <div class="card-header">
+            <img src="https://static.sanatanprabhat.org/wp-content/uploads/sites/7/2021/04/11210300/RS971_shivaji_maharaj_colour_Goa.jpg" alt="Chatrapati Shivaji Maharaj"></img>
+         </div>   
+   
+         <div class="card-body">
             <span class="tag tag-orange"> Maharashtra </span>
             <h4> Chatrapati Shivaji Maharaj </h4>
             <p> Chatrapati Shivaji Maharaj was the founder of the Maratha Empire in western India. He is considered to be one of the greatest warriors of his time and even today, stories of his exploits are narrated as a part of the folklore. With his valor and great administrative skills, Shivaji carved out an enclave from the declining Adilshahi sultanate of Bijapur. It eventually became the genesis of the Maratha Empire. After establishing his rule, Shivaji implemented a competent and progressive administration with the help of a disciplined military and well-established administrative set-up. Shivaji is well-known for his innovative military tactics that centered around non-conventional methods leveraging strategic factors like geography, speed, and surprise to defeat his more powerful enemies. </p>
           </div>
         </div>
 
-        <div class="card">
-          <div class="card-header">
-            <img src="https://www.dauniv.ac.in/public/frontassets/image/Ahilyabai_holkar_320.jpg" alt=""></img>
-          </div>
-
-          <div class="card-body">
+      <div class="card">
+         <div class="card-header">
+            <img src="https://www.dauniv.ac.in/public/frontassets/image/Ahilyabai_holkar_320.jpg" alt="Ahilyadevi Holkar"></img>
+         </div>   
+   
+         <div class="card-body">
             <span class="tag tag-purple"> Madhya Pradesh </span>
             <h4>Ahilyabai Holkar</h4>
             <p> Already trained to be a ruler, Ahilya Bai petitioned Peshwa Madhav Rao I after Malhar Rao and her son's death to grant her the administration of the Holkar dynasty. Some in Malwa objected to her assumption of rule, but the Holkar faction of Maratha army sided with her. The Peshwa granted her permission on 11 December 1767, with subhedar Tukoji Rao Holkar (Malhar Rao's adopted son) as her military head. She proceeded to rule Malwa in the most enlightened manner, even reinstating a Brahmin who had previously opposed her. Ahilya Bai paid regular visits to her subjects, being always accessible to anyone needing her help. With his valor and great administrative skills, Shivaji carved out an enclave from the declining Adilshahi sultanate of Bijapur. It eventually became the genesis of the Maratha Empire. After establishing his rule, Shivaji implemented a competent and progressive administration with the help of a disciplined military and well-established administrative set-up. Shivaji is well-known for his innovative military tactics that centered around non-conventional methods leveraging strategic factors like geography, speed, and surprise to defeat his more powerful enemies. </p>
