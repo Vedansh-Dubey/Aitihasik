@@ -14,7 +14,7 @@ const Homepage = () => {
       <Grid item xs={12} >
         <div style={{ padding: "2rem" }}>
           <Typography variant="h3" marginTop={3} textAlign={'center'}>Aitihasik</Typography>
-          <Typography variant="h5" marginTop={3} textAlign={'center'}>Click on any of the buttons given below</Typography>
+          <Typography variant="h5" marginTop={3} textAlign={'center'}>Click on any of the buttons given below to learn about the ruler or forts</Typography>
 
         </div>
       </Grid>
