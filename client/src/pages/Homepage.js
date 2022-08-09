@@ -3,12 +3,12 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import Map from '../components/GoogleMap/Map'
 
-const Homepage = () => {
+const Homepage = ({questions,setQuestions}) => {
   return (
     <Grid container maxWidth={'xl'} justifyContent={'center'}>
       <Grid item md={12} xs={12}>
         <div style={{ minHeight: "100vh" }}>
-          <Map />
+          <Map questions={questions} setQuestions={setQuestions} />
         </div>
       </Grid>
       <Grid item xs={12} >

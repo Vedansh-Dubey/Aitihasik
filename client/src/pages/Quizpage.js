@@ -3,40 +3,9 @@ import React, { useState } from 'react'
 import { useEffect } from 'react';
 import styled from 'styled-components'
 import axios from 'axios'
-const Quizpage = () => {
-  const [questions, setQuestions] = useState([
-    {
-      "questionText": "Chhatrapati Shivaji Maharaj (1674-1680 AD) was the ruler of which dynasty?",
-      "questionImg": "https://static.sanatanprabhat.org/wp-content/uploads/sites/7/2021/04/11210300/RS971_shivaji_maharaj_colour_Goa.jpg",
-      "answerOptions": [
-          {
-              "answerText": "Nanda",
-              "isCorrect": false
-          },
-          {
-              "answerText": "Haryanka",
-              "isCorrect": false
-          },
-          {
-              "answerText": "Maurya",
-              "isCorrect": false
-          },
-          {
-              "answerText": "Maratha",
-              "isCorrect": true
-          }
-      ]
-    }
-  ]);
-  const getQuiz = async () => {
-    const { data } = await axios.get(`${process.env.REACT_APP_API}/quiz`);
-    console.log(data);
-    setQuestions(data)
-  }
+const Quizpage = ({questions,setQuestions}) => {
+ 
 
-  useEffect(() => {
-    getQuiz();
-  }, [])
 
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
