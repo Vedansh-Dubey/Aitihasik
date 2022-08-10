@@ -1,6 +1,7 @@
-import { Button, Container, Grid, TextField, Typography, MenuItem, Backdrop, CircularProgress, } from "@mui/material";
+import { Button, Container, Grid, TextField } from "@mui/material";
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
+import { UserContext } from '../../context/index'
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -9,7 +10,7 @@ const LoginForm = (props) => {
     const [userData, setUserData] = useState({
         name: "", password: ""
     });
-
+    // const [state, setState] = useContext(UserContext)
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
@@ -23,35 +24,23 @@ const LoginForm = (props) => {
         setUserData({ ...userData, [key]: value });
     };
 
-    const submitData = (e) => {
-        e.preventDefault();
-        setLoading(true);
-        if (
-            userData.name.length == 0 ||
-            userData.password.length == 0
-        ) {
-            setLoading(false);
-            toast.error("Fields Empty");
-        } else {
-            axios
-                .post(`http://localhost:8000/login`, userData)
-                .then((res) => {
-                    setLoading(false);
-                    toast.success("User login Successfully");
-                    setUserData({
-                        name: "", password: ""
-                    });
-                    setTimeout(() => {
+    const submitData = async () => {
+        try {
+            const { data } = await axios.post(`${process.env.REACT_APP_API}/login`, userData)
+            setUserData({ name: "", password: "" })
+            // setState({
+            //     user: data.user,
+            //     token: data.token
+            // })
+            window.localStorage.setItem('auth', JSON.stringify(data))
+            toast.success("User login Succesfully")
+            setTimeout(() => {
+                props.handleClose1();
+            }, 1500);
 
-                        props.handleClose1();
-                    }, 1500);
-                })
-                .catch(function (error) {
-                    setLoading(false);
-                    // console.log(error.response);
-                    toast.warn("Something goes wrong. Please try again.");
-                    // props.handleClose();
-                });
+        } catch (error) {
+            toast.error("Something went wrong")
+            console.log(error);
         }
     };
 

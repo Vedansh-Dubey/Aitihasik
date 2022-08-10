@@ -22,7 +22,7 @@ function Navbar1() {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav" style={{ flexGrow: "0" }}>
                     <Nav className="me-auto">
-                        <Link to='/'><Nav.Link >Home</Nav.Link></Link>
+                        <Nav.Link to='/'>Home</Nav.Link>
                         <Nav.Link onClick={handleOpen} >Register</Nav.Link>
                         <Nav.Link onClick={handleOpen1}>Login</Nav.Link>
                         <Nav.Link >About Us</Nav.Link>
@@ -48,7 +48,7 @@ function Navbar1() {
                     aria-describedby="keep-mounted-modal-description"
                 >
                     <Box >
-                        <LoginForm handleClose={handleClose1} />
+                        <LoginForm handleClose1={handleClose1} />
                     </Box>
                 </Modal>
             </Container>

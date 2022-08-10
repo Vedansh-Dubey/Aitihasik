@@ -1,9 +1,9 @@
-import { Button, Container, Grid, TextField, Typography, MenuItem, Backdrop, CircularProgress, } from "@mui/material";
+import { Button, Container, Grid, TextField } from "@mui/material";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useNavigate } from "react-router-dom";
+
 
 const RegisterForm = (props) => {
     const [userData, setUserData] = useState({
@@ -27,17 +27,17 @@ const RegisterForm = (props) => {
         e.preventDefault();
         setLoading(true);
         if (
-            userData.name.length == 0 ||
-            userData.password.length == 0 ||
-            userData.mobile.length != 10 ||
-            userData.cpassword.length == 0 ||
-            userData.age.length == 0
+            userData.name.length === 0 ||
+            userData.password.length === 0 ||
+            userData.mobile.length !== 10 ||
+            userData.cpassword.length === 0 ||
+            userData.age.length === 0
         ) {
             setLoading(false);
             toast.error("Fields Empty");
         } else {
             axios
-                .post(`http://localhost:8000/register`, userData)
+                .post(`${process.env.REACT_APP_API}/register`, userData)
                 .then((res) => {
                     setLoading(false);
                     toast.success("User Register Successfully");

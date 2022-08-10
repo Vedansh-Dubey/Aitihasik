@@ -1,5 +1,7 @@
+import axios from 'axios';
 import React from 'react'
 import { Chart } from "react-google-charts";
+import { useNavigate } from 'react-router-dom';
 
 const data = [
     ['State Code', 'State'],
@@ -57,10 +59,46 @@ export const options = {
     width: "100%",
     height: "80vh",
 };
-const Map = () => {
+
+const Map = ({setQuestions,questions}) => {
+    const navigate=useNavigate()
+    const getStatename = async (indexNo) => {
+        try {
+            
+       
+        const stateName = data[indexNo][0]
+        console.log(stateName);
+        const res = await axios.get(`${process.env.REACT_APP_API}/quiz`);
+        const vass=res.data[0];
+        const sss=vass[stateName];
+        setQuestions(sss);
+        navigate('/quiz')
+        console.log(sss); } catch (error) {
+            console.log(error);
+        }
+    }
     return (
         <div>
             <Chart
+                chartEvents={[
+                    {
+                        //   eventName: "select",
+                        //   callback: ({ chartWrapper }) => {
+                        //     const chart = chartWrapper.getChart();
+                        //     const selection = chart.getSelection();
+                        //     if (selection.length === 0) return;
+                        //     const region = data[selection[0].row + 1];
+                        //     console.log("Selected : " + region);
+                        //   },
+                        eventName: "select",
+                        callback({ chartWrapper }) {
+                            const index = chartWrapper.getChart().getSelection();
+                            console.log(index[0].row);
+                            getStatename(index[0].row + 1);
+                        }
+
+                    },
+                ]}
                 chartType="GeoChart"
                 data={data}
                 options={options}

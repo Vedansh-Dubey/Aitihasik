@@ -1,4 +1,4 @@
-import User from "../Models/UserSchema.js";
+import User from "../Models/userSchema.js"
 import jwt from 'jsonwebtoken'
 import { hashPassword } from "../Helper/auth.js";
 import { comparePassword } from '../Helper/auth.js'
